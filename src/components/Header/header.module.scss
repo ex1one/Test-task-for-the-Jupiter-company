@@ -1,36 +1,67 @@
 .header {
   background-color: #28293e;
   position: fixed;
-  width: 100%;
   color: #fff;
-
+  width: 100%;
+  height: auto;
+  z-index: 1000;
   .headerContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    .hamburger{
+      width: 30px;
+      height: 20px;
+      position: relative;
+      display: none;
+      cursor: pointer;
+      top: 50px;
+      margin-left: 20px;
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        width: 30px;
+        background-color: #fff;
+        height: 2px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 30px;
+        background-color: #fff;
+        height: 2px;
+      }
+      & .line {
+        position: absolute;
+        top: 9px;
+        width: 30px;
+        background-color: #fff;
+        height: 2px;
+      }
+    }
+    .desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     .wrapperLogo {
       display: flex;
+      cursor: pointer;
 
-      .logo{
+      .logo {
         margin: 15px 10px 0 0;
       }
     }
+  }
+}
 
-    .nav {
-
-      .menu {
-        display: flex;
-
-        .itemMenu {
-          list-style-type: none;
-          cursor: pointer;
-          font-size: 22px;
-
-          &:not(:last-of-type) {
-            margin-right: 100px;
-          }
-        }
+@media screen and (max-width: 1040px) {
+  .header {
+    .headerContent {
+      .hamburger {
+        display: block;
+      }
+      .desktop {
+        display: none;
       }
     }
   }

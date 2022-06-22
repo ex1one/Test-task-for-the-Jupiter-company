@@ -1,24 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../../../public/img/Polygon.svg';
 import styles from './header.module.scss';
+import Button from '../Button/Button';
+import Menu from '../Menu/Menu';
 
 const Header = () => {
-  const menu = ['About', 'Services', 'Pricing', 'Blog']; // Могут подгружаться с сервака
+  const [open, setOpen] = useState<boolean>(true);
+
+  const handleClick = () => {
+    setOpen((prev) => !prev);
+  };
+
   return (
     <header className={styles.header}>
       <div className="container">
         <div className={styles.headerContent}>
-          <div className={styles.wrapperLogo}>
-            <Logo className={styles.logo} />
-            <h1>Agency</h1>
+          <div className={styles.hamburger}>
+            <span onClick={handleClick} className={styles.line} />
           </div>
-          <nav className={styles.nav}>
-            <ul className={styles.menu}>
-              {menu.map((item) => <li key={item.toString()} className={styles.itemMenu}>{item}</li>)}
-            </ul>
-          </nav>
-          <div className={styles.contact}>
-            <button type="submit">Contact</button>
+          <div className={styles.desktop}>
+            <div className={styles.wrapperLogo}>
+              <Logo className={styles.logo} />
+              <h1>Agency</h1>
+            </div>
+            <Menu open={open} setOpen={setOpen} />
+            <div className={styles.contact}>
+              <Button title="Contact" variant="other" type="submit" />
+            </div>
           </div>
         </div>
       </div>
