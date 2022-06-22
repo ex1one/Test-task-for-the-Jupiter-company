@@ -5,9 +5,19 @@
   color: #fff;
 
   .headerContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    .desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 992px) {
+        .desktop{
+          display: none;
+        }
+      }
+
+    }
 
     .wrapperLogo {
       display: flex;
@@ -18,21 +28,40 @@
       }
     }
 
-    .nav {
+      .nav {
+        display: inline-block;
+        .menu {
+          display: flex;
 
-      .menu {
-        display: flex;
+          .itemMenu {
+            list-style-type: none;
+            cursor: pointer;
+            font-size: 22px;
 
-        .itemMenu {
-          list-style-type: none;
-          cursor: pointer;
-          font-size: 22px;
+            &:hover {
+              color: #117964;
+              transition: background 0.3s ease-in-out;
+            }
 
-          &:not(:last-of-type) {
-            margin-right: 100px;
+            &:not(:last-of-type) {
+              margin-right: 100px;
+            }
           }
         }
       }
+
+    .mobile {
+      display: none;
     }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .desktop{
+    display: none;
+  }
+
+  .mobile {
+    display: block;
   }
 }
