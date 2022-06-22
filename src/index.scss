@@ -19,19 +19,19 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: auto;
 }
 @media (min-width: 576px) {
-  .container,  {
+  .container {
     max-width: 540px;
   }
 }
 
 @media (min-width: 768px) {
-  .container,  {
+  .container  {
     max-width: 720px;
   }
 }
 
 @media (min-width: 992px) {
-  .container, {
+  .container {
     max-width: 960px;
   }
 }
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 576px) {
-  .container,  {
+  .container {
     width: 100%;
   }
 }

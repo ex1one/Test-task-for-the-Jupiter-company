@@ -1,0 +1,18 @@
+.nav {
+  display: inline-block;
+  & ul {
+    display: flex;
+    .itemMenu {
+      list-style-type: none;
+      cursor: pointer;
+      font-size: 22px;
+      &:hover {
+        color: #117964;
+        transition: background 0.3s ease-in-out;
+      }
+      &:not(:last-of-type) {
+        margin-right: 100px;
+      }
+    }
+  }
+}
