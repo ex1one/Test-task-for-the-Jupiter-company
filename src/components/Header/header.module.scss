@@ -3,7 +3,7 @@
   position: fixed;
   color: #fff;
   width: 100%;
-  height: 100%;
+  height: auto;
   z-index: 1000;
   .headerContent {
     .hamburger{
@@ -46,14 +46,23 @@
     .wrapperLogo {
       display: flex;
       cursor: pointer;
-      .logo{
+
+      .logo {
         margin: 15px 10px 0 0;
       }
     }
-
   }
 }
 
 @media screen and (max-width: 1040px) {
-
+  .header {
+    .headerContent {
+      .hamburger {
+        display: block;
+      }
+      .desktop {
+        display: none;
+      }
+    }
+  }
 }
