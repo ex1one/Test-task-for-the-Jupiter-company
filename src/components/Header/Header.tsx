@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../../../public/img/Polygon.svg';
 import styles from './header.module.scss';
+import Button from '../Button/Button';
 
 const Header = () => {
   const menu = ['About', 'Services', 'Pricing', 'Blog']; // Могут подгружаться с сервака
@@ -18,7 +19,7 @@ const Header = () => {
             </ul>
           </nav>
           <div className={styles.contact}>
-            <button type="submit">Contact</button>
+            <Button title="Contact" variant="other" type="submit" />
           </div>
         </div>
       </div>
