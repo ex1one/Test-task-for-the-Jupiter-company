@@ -16,7 +16,7 @@ const Menu: FC <IMenuProps> = ({ open, setOpen }) => {
     <nav className={styles.nav}>
       <div className={styles.menuContent}>
         <ul>
-          {menu.map((item) => <li key={item.toString()} className={styles.itemMenu}>{item.title}</li>)}
+          {menu.map((item) => <li key={item.path} className={styles.itemMenu}>{item.title}</li>)}
         </ul>
         <div className={styles.close} onClick={handleClick} />
       </div>
