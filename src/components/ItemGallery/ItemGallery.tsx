@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import styles from './itemGallery.module.scss';
 
 interface IItemGalleryProps {
-  brand: string;
+  brand: number;
   imageUrl: string;
   title: string;
 }
