@@ -6,17 +6,17 @@ export interface IGalleryState {
 }
 
 export enum GalleryActionTypes {
-  SET_GALLERY = 'SET_GALLERY',
-  SET_ERROR = 'SET_ERROR',
+  GET = 'GET',
+  ERROR = 'ERROR',
 }
 
 export interface SetGalleryAction {
-  type: GalleryActionTypes.SET_GALLERY;
+  type: GalleryActionTypes.GET;
   payload: IGallery[];
 }
 
 export interface SetErrorAction {
-  type: GalleryActionTypes.SET_ERROR;
+  type: GalleryActionTypes.ERROR;
   payload: unknown;
 }
 

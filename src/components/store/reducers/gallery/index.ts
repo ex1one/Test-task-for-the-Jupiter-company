@@ -7,9 +7,9 @@ const initialState: IGalleryState = {
 
 const galleryReducer = (state = initialState, action: GalleryAction) => {
   switch (action.type) {
-    case GalleryActionTypes.SET_GALLERY:
+    case GalleryActionTypes.GET:
       return { ...state, gallery: action.payload };
-    case GalleryActionTypes.SET_ERROR:
+    case GalleryActionTypes.ERROR:
       return { ...state, gallery: null, error: action.payload };
     default: return state;
   }
