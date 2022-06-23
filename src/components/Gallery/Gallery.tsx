@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './gallery.module.scss';
 import ItemGallery from '../ItemGallery/ItemGallery';
 import Sort from '../Sort/Sort';
-import { IGallery } from '../../api/gallery/types';
+import useTypedSelector from '../../hooks/useTypedSelector';
+import selectors from '../../store/selectors/selectors';
+import fetchGallery from '../../api/gallery';
 
 const Gallery = () => {
-  const [gallery, setGallery] = useState<IGallery[] | null>(null);
+  const { gallery, error } = useTypedSelector(selectors.gallery);
   useEffect(() => {
-    // Подгрузка карточек
+    fetchGallery;
   }, []);
   return (
     <div className={styles.wrapperGallery}>

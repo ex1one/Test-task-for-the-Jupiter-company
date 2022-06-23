@@ -3,14 +3,17 @@ import { GalleryAction, GalleryActionTypes, IGalleryState } from './types';
 const initialState: IGalleryState = {
   gallery: null,
   error: null,
+  isLoading: false,
 };
 
 const galleryReducer = (state = initialState, action: GalleryAction) => {
   switch (action.type) {
     case GalleryActionTypes.GET:
-      return { ...state, gallery: action.payload };
+      return { ...state, isLoading: true };
+    case GalleryActionTypes.GET_SUCCESS:
+      return { ...state, gallery: action.payload, isLoading: false };
     case GalleryActionTypes.ERROR:
-      return { ...state, gallery: null, error: action.payload };
+      return { ...state, error: action.payload };
     default: return state;
   }
 };
